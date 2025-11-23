@@ -1,0 +1,17 @@
+<td>{{ task().name }}</td>
+<td>{{ task().category }}</td>
+<td>{{ task().priority }}</td>
+
+<td>
+  <p-checkbox
+    [ngModel]="task().isDone"
+    (ngModelChange)="toggle.emit(task().id)"
+    [binary]="true"
+    variant="filled"
+  ></p-checkbox>
+</td>
+
+<td>
+  <!-- <button type="button" label="Удалить" (click)="remove.emit(task().id)"><i class="pi pi-trash"></i></button> -->
+  <p-button icon="pi pi-trash" aria-label="Удалить" (click)="remove.emit(task().id)" />
+</td>

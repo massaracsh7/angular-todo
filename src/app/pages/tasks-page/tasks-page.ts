@@ -1,19 +1,18 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { TasksService } from '../../core/tasks-service';
-import { TableModule } from 'primeng/table';
-import { FormsModule } from '@angular/forms';
-import { CheckboxModule } from 'primeng/checkbox';
+import { TaskTable } from '../../shared/components/task-table/task-table';
 
 
 
 @Component({
   selector: 'app-tasks-page',
-  imports: [TableModule, FormsModule, CheckboxModule],
+  imports: [TaskTable],
   templateUrl: './tasks-page.html',
   styleUrl: './tasks-page.css',
 })
 export class TasksPage {
   tasksService = inject(TasksService);
-  tasks = this.tasksService.tasks;
-  toggle = this.tasksService.toggle;
+  tasks = computed(() => this.tasksService.tasks());
+  toggle = (id: string) => this.tasksService.toggle(id);
+  remove = (id: string) => this.tasksService.remove(id);
 }
