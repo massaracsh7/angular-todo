@@ -21,4 +21,13 @@ export class TasksService {
       isDone: true
     },
   ]);
+
+  toggle(id: string) {
+    this.tasks.update((list) =>
+      list.map((t) =>
+        t.id === id ? { ...t, isDone: !t.isDone } : t
+      )
+    );
+  }
+  
 }
