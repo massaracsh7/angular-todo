@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
 import { TasksService } from '../../core/tasks-service';
 import { Categories, Priority, Task } from '../../models/task.model';
 import { InputTextModule } from 'primeng/inputtext';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 @Component({
   selector: 'app-add-task-page',
   templateUrl: './add-task-page.html',
   styleUrl: './add-task-page.css',
-  imports: [DialogModule, Button, SelectModule, ReactiveFormsModule, InputTextModule ],
+  imports: [DialogModule, Button, SelectModule, ReactiveFormsModule, InputTextModule, FloatLabelModule],
 })
 export class AddTaskPage {
   tasksService = inject(TasksService);
