@@ -3,11 +3,10 @@ import { input } from '@angular/core';
 import { TasksService } from '../../core/tasks-service';
 import { Categories } from '../../models/task.model';
 import { TaskTable } from '../../shared/components/task-table/task-table';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-categories-page',
-  imports: [TaskTable,RouterModule],
+  imports: [TaskTable],
   templateUrl: './categories-page.html',
   styleUrl: './categories-page.css',
 })
