@@ -6,10 +6,10 @@ export const routes: Routes = [
     path: 'tasks', 
     loadComponent: () => import('./pages/tasks-page/tasks-page').then(m => m.TasksPage)
   },
-//   { 
-//     path: 'add-task', 
-//     loadComponent: () => import('./pages/add-task.page').then(m => m.AddTaskPage)
-//   },
+  { 
+    path: 'add-task', 
+    loadComponent: () => import('./pages/add-task-page/add-task-page').then(m => m.AddTaskPage)
+  },
   { 
     path: 'categories/:category', 
     loadComponent: () => import('./pages/categories-page/categories-page').then(m => m.CategoriesPage)

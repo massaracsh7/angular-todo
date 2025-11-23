@@ -4,7 +4,11 @@ export enum Categories {
   Home = "Дом"
 }
 
-export type Priority = 'низкий' | 'средний' | 'высокий';
+export enum Priority {
+  Low = "низкий",
+  Medium = "средний",
+  High = "высокий"
+}
 
 export interface Task {
   id: string;

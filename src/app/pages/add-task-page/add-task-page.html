@@ -1,0 +1,39 @@
+<p-button (click)="showDialog()" label="Создать задачу"></p-button>
+
+<p-dialog
+  header="Создать задачу"
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ width: '30rem' }"
+  [contentStyle]="{ padding: '2rem' }"
+>
+  <form [formGroup]="taskForm" class="flex flex-col gap-6 text-lg">
+
+    <div>
+      <label>Название</label>
+      <input pInputText formControlName="name" class="p-inputtext-lg" />
+    </div>
+
+    <div>
+      <label>Категория</label>
+      <p-select 
+        [options]="categories" 
+        formControlName="category" 
+    >
+      </p-select>
+    </div>
+
+    <div>
+      <label>Приоритет</label>
+      <p-select 
+        [options]="priorities" 
+        formControlName="priority" 
+    >
+      </p-select>
+    </div>
+    <div>
+      <p-button label="Создать" (click)="addTask()"></p-button>
+    </div>
+
+  </form>
+</p-dialog>

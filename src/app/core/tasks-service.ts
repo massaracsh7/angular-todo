@@ -1,5 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { Task, Categories } from '../models/task.model';
+import { Task, Categories, Priority } from '../models/task.model';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
   providedIn: 'root',
@@ -9,14 +10,14 @@ export class TasksService {
     {
       id: '0',
       name: 'FirstTask',
-      priority: 'низкий',
+      priority: Priority.Low,
       category: Categories.Work,
       isDone: false
     },
     {
       id: '1',
       name: 'SecondTask',
-      priority: 'высокий',
+      priority: Priority.High,
       category: Categories.Study,
       isDone: true
     },
@@ -38,5 +39,13 @@ export class TasksService {
       )
     );
   };
+
+  create(task: Omit<Task, 'id'>) {
+    const newTask: Task = {
+      ...task,
+      id: uuidv4(),
+    }
+    this.tasks.update((list) => [...list, newTask])
+  }
 
 }
