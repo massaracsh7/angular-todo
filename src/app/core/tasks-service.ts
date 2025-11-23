@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { Task, Categories } from '../models/task.model';
 
 @Injectable({
@@ -21,6 +21,8 @@ export class TasksService {
       isDone: true
     },
   ]);
+
+  filterCategory = (cat: Categories) => computed(() => this.tasks().filter((item) => item.category === cat))
 
   toggle(id: string) {
     this.tasks.update((list) =>

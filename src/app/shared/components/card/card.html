@@ -1,5 +1,5 @@
 <td>{{ task().name }}</td>
-<td>{{ task().category }}</td>
+<td><a [routerLink]="['/categories', task().category]">{{ task().category }}</a></td>
 <td>{{ task().priority }}</td>
 
 <td>
