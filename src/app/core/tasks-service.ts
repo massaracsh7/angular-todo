@@ -13,7 +13,7 @@ export class TasksService {
       category: Categories.Work,
       isDone: false
     },
-        {
+    {
       id: '1',
       name: 'SecondTask',
       priority: 'высокий',
@@ -28,6 +28,13 @@ export class TasksService {
         t.id === id ? { ...t, isDone: !t.isDone } : t
       )
     );
-  }
-  
+  };
+
+  remove(id: string) {
+    this.tasks.update((list) =>
+      list.filter((t) => t.id !== id
+      )
+    );
+  };
+
 }
