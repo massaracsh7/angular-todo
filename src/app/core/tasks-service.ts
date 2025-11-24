@@ -9,14 +9,14 @@ export class TasksService {
   public tasks = signal<Task[]>([
     {
       id: '0',
-      name: 'FirstTask',
+      name: 'Первое задание',
       priority: Priority.Low,
       category: Categories.Work,
       isDone: false
     },
     {
       id: '1',
-      name: 'SecondTask',
+      name: 'Второе задание',
       priority: Priority.High,
       category: Categories.Study,
       isDone: true

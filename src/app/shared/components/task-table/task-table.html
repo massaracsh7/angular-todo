@@ -13,7 +13,7 @@
       app-card
       [task]="task"
       (remove)="remove.emit($event)"
-      (toggle)="toggle.emit($event)"
+      (toggled)="toggled.emit($event)"
     ></tr>
   </ng-template>
   <ng-template #emptymessage>

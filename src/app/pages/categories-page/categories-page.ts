@@ -14,6 +14,6 @@ export class CategoriesPage {
   category = input.required<Categories>();
   tasksService = inject(TasksService);
   tasks = computed(() => this.tasksService.filterCategory(this.category())());
-  toggle = (id: string) => this.tasksService.toggle(id);
+  toggled = (id: string) => this.tasksService.toggle(id);
   remove = (id: string) => this.tasksService.remove(id);
 }

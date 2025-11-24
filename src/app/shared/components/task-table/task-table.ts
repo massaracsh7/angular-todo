@@ -13,7 +13,7 @@ import { UpperCasePipe } from '@angular/common';
 })
 export class TaskTable {
 tasks = input.required<Task[]>();
-toggle = output<string>();
+toggled = output<string>();
 remove = output<string>();
 
 }

@@ -13,6 +13,6 @@ import { TaskTable } from '../../shared/components/task-table/task-table';
 export class TasksPage {
   tasksService = inject(TasksService);
   tasks = computed(() => this.tasksService.tasks());
-  toggle = (id: string) => this.tasksService.toggle(id);
+  toggled = (id: string) => this.tasksService.toggle(id);
   remove = (id: string) => this.tasksService.remove(id);
 }

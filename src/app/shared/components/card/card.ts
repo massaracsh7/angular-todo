@@ -16,6 +16,6 @@ import { LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 export class Card {
   task = input.required<Task>();
 
-  toggle = output<string>();
+  toggled = output<string>();
   remove = output<string>();
 }

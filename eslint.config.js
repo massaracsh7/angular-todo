@@ -26,7 +26,7 @@ module.exports = defineConfig([
       "@angular-eslint/component-selector": [
         "error",
         {
-          type: "element",
+          type: ["element", "attribute"],
           prefix: "app",
           style: "kebab-case",
         },
@@ -40,5 +40,5 @@ module.exports = defineConfig([
       angular.configs.templateAccessibility,
     ],
     rules: {},
-  }
+  },
 ]);

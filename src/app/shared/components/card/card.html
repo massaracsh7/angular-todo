@@ -5,7 +5,7 @@
 <td>
   <p-checkbox
     [ngModel]="task().isDone"
-    (ngModelChange)="toggle.emit(task().id)"
+    (ngModelChange)="toggled.emit(task().id)"
     [binary]="true"
     variant="filled"
   ></p-checkbox>
