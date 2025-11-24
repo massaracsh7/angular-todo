@@ -1,4 +1,6 @@
-<p-button (click)="showDialog()" label="Создать задачу"></p-button>
+<div class="center-page">
+  <p-button (click)="showDialog()" label="Создать задачу"></p-button>
+</div>
 
 <p-dialog
   header="Создать задачу"
@@ -9,7 +11,7 @@
 <form [formGroup]="taskForm" class="p-fluid">
   <div class="p-field form-field">
     <p-floatlabel>
-      <input pInputText id="task-name" formControlName="name" />
+      <input pInputText id="task-name" formControlName="name" class="w-100"/>
       <label for="task-name">Название</label>
     </p-floatlabel>
   </div>

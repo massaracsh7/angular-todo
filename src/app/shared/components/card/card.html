@@ -1,6 +1,6 @@
-<td>{{ task().name }}</td>
-<td><a [routerLink]="['/categories', task().category]">{{ task().category }}</a></td>
-<td>{{ task().priority }}</td>
+<td>{{ task().name | titlecase}}</td>
+<td><a [routerLink]="['/categories', task().category]">{{ task().category  | uppercase }}</a></td>
+<td>{{ task().priority | lowercase}}</td>
 
 <td>
   <p-checkbox

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 import { Button } from 'primeng/button';
 import { SelectModule } from 'primeng/select';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TasksService } from '../../core/tasks-service';
 import { Categories, Priority, Task } from '../../models/task.model';
@@ -26,7 +26,7 @@ export class AddTaskPage {
   priorities = Object.values(Priority).map((p) => ({ label: p, value: p }));
 
   taskForm: FormGroup = this.fb.group({
-    name: [''],
+    name: ['', Validators.required],
     category: [Categories.Study],
     priority: [Priority.Low],
     isDone: [false],
@@ -41,14 +41,6 @@ export class AddTaskPage {
       const newTask: Omit<Task, 'id'> = this.taskForm.value;
       this.tasksService.create(newTask);
       this.visible = false;
-
-      this.taskForm.reset({
-        name: '',
-        category: Categories.Study,
-        priority: Priority.Low,
-        isDone: false,
-      });
-
       this.router.navigate(['/']);
     }
   }
